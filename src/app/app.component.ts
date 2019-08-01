@@ -6,10 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'WeatherApp';
-  numbers: Array<number> = [];
+  public title = 'Weather App';
+
+  /** array of random number */
+  public numbers: Array<number> = [];
 
   constructor() {
-    this.numbers = Array(5).fill(0).map((x,i)=>i);
+    /** array of 9 random number to display panel */
+    this.numbers = Array(9).fill(0).map((x,i)=>i);
   }
 }
