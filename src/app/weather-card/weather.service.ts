@@ -16,7 +16,10 @@ export class WeatherService {
   }
 
   loadWeather(location: string) {
-    // return of(JSON.parse(localStorage.getItem(location.toLowerCase().trim())));
     return this.http.get(this.apiUrl + location);
+  }
+
+  loadWeatherDetailFromLocal(location: string) {
+    return of(JSON.parse(localStorage.getItem(location.toLowerCase().trim())));
   }
 }
