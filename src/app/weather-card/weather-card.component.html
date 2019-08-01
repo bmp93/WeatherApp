@@ -1,28 +1,3 @@
-<!-- <div class="card bg-default">
-  <form [formGroup]="weatherSearchForm">
-    <div class="card-header text-right" *ngIf="weatherDetail">
-      <button (click)="onEdit()">edit</button>
-    </div>
-    <div class="card-body text-center">
-      <div *ngIf="!weatherDetail">
-        <input class="form-control" type="text" id="weatherLocation" aria-describedby="weatherLocation" placeholder="Please input a Location"
-          formControlName="location" />
-        <button type="button" (click)="getWeatherDetail()">search</button>
-      </div>
-      <div *ngIf="weatherDetail">
-        <h6> City Or State : {{weatherDetail?.name}}</h6>
-        <h6> humidity : {{weatherDetail?.main.humidity}}</h6>
-        <h6> pressure : {{weatherDetail?.main.pressure}}</h6>
-        <h6> temp_min : {{weatherDetail?.main.temp_min}}</h6>
-        <h6> temp_max : {{weatherDetail?.main.temp_max}}</h6>
-      </div>
-      <pre *ngIf='message'>
-        {{message}}
-      </pre>
-    </div>
-  </form>
-</div> -->
-
 <form [formGroup]="weatherSearchForm">
   <div class="card-header d-flex justify-content-between align-items-center border-0">
     <!-- with search input and button -->
@@ -53,9 +28,10 @@
       </div>
       <!-- details -->
       <div class="text-center">
-        <em class="lead">{{weatherDetail?.weather[0].main}}</em>
+        <em class="lead" title="{{weatherDetail?.weather[0].description}}">{{weatherDetail?.weather[0].main}}</em>
         <!-- weather icon -->
-        <div class="weather-icon text-white d-flex pb-2" ngClass="{{'icon-' + (weatherDetail?.weather[0].main | lowercase)}}" title="{{weatherDetail?.weather[0].main}}"></div>
+        <!-- <div class="weather-icon text-white d-flex pb-2" ngClass="{{'icon-' + (weatherDetail?.weather[0].main | lowercase)}}" title="{{weatherDetail?.weather[0].main}}"></div> -->
+        <img src="http://openweathermap.org/img/wn/{{weatherDetail?.weather[0].icon}}@2x.png" width="100px" height="100px" alt="">
       </div>
     </div>
     <!-- first row -->

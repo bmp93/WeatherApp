@@ -21,7 +21,6 @@ export class WeatherCardComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-
     this.initForm();
   }
 
