@@ -1,4 +1,9 @@
-<h2>{{title}}</h2>
+<h2>
+  {{title}}
+  <span class="badge" [ngClass]="isOnline ? 'badge-success' : 'badge-danger'">
+    {{isOnline ? 'Online' : 'Offline'}}
+  </span>
+</h2>
 <div class="px-4">
   <div class="card-width mt-4">
     <div class="card" *ngFor="let item of numbers">

@@ -16,6 +16,8 @@ export class AppComponent {
 
   public online$: Observable<boolean>;
 
+  public isOnline: boolean = false;
+
   constructor(
     private utilityService: UtilityService
   ) {
@@ -36,6 +38,7 @@ export class AppComponent {
       if (!value) {
         alert('“you are offline”, we might want to load cached data if available.')
       }
+      this.isOnline = value;
       this.utilityService.setNetworkStatus(value);
     })
   }
