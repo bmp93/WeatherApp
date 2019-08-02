@@ -28,21 +28,33 @@ label {
     color: #fff;
     border: 0;
     transition: .2s all ease-in-out;
-    background: #00B4DB;
-    background: linear-gradient(to right, #0083B0, #00B4DB);
+    // background: #00B4DB;
+    // background: linear-gradient(to right, #0083B0, #00B4DB);
     border-color: #fff;
-    height: 410px;
+    position: relative;
 
     &:hover {
         box-shadow: 7px 9px 9px 0px rgba(204, 204, 204, 0.72);
     }
 
+    &:after {
+        content: "";
+        position: absolute;
+        opacity: .4;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        top: 0;
+        user-select: none;
+        pointer-events: none;
+    }
+
     .card-header,
     .card-footer,
     .card-body {
-        background: #00B4DB;
+        // background: #00B4DB;
 
-        background: linear-gradient(to right, #0083B0, #00B4DB);
+        // background: linear-gradient(to right, #0083B0, #00B4DB);
         border-color: #fff;
     }
 
@@ -82,9 +94,23 @@ label {
     grid-auto-flow: row dense;
     grid-gap: 15px;
 }
-.icon-clear{
-    &:before{
-        content:"\f185";
-        font-family:FontAwesome !important;
+
+.icon-clear {
+    &:before {
+        content: "\f185";
+        font-family: FontAwesome !important;
+    }
+}
+
+form {
+    background: #00B4DB;
+    background: linear-gradient(to right, #0083B0, #00B4DB);
+    background-size: cover;
+    min-height: 340px
+}
+
+.form-control {
+    &.regular-width {
+        max-width: 200px;
     }
 }

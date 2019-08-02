@@ -1,4 +1,4 @@
-<form [formGroup]="weatherSearchForm">
+<form [formGroup]="weatherSearchForm" class="h-100">
   <div class="card-header d-flex justify-content-between align-items-center border-0">
     <!-- with search input and button -->
     <div class="input-group border-white" *ngIf="!weatherDetail">
@@ -11,8 +11,8 @@
     </div>
     <!-- with title and add button -->
     <div class="d-flex justify-content-between align-items-center flex-grow-1" *ngIf="weatherDetail">
-      <h6 title="{{weatherDetail?.name}}">{{weatherDetail?.name}},{{weatherDetail?.sys.country}}<img src="http://openweathermap.org/images/flags/{{weatherDetail?.sys.country | lowercase}}.png " class="img-fluid ml-2 mb-1"
-          alt="Country"></h6>
+      <h6 title="{{weatherDetail?.name}}">{{weatherDetail?.name}},{{weatherDetail?.sys.country}}<img src="http://openweathermap.org/images/flags/{{weatherDetail?.sys.country | lowercase}}.png "
+          class="img-fluid ml-2 mb-1" alt="Country"></h6>
       <!-- edit button -->
       <button class="btn btn-transparent py-0 px-1" title="Edit" (click)="onEdit()">
         <span class="fa fa-edit text-white"></span>
@@ -30,7 +30,10 @@
       <div class="text-center">
         <em class="lead" title="{{weatherDetail?.weather[0].description}}">{{weatherDetail?.weather[0].main}}</em>
         <!-- weather icon -->
-        <img src="http://openweathermap.org/img/wn/{{weatherDetail?.weather[0].icon}}@2x.png" width="100px" height="100px" alt="">
+        <div>
+          <img src="http://openweathermap.org/img/wn/{{weatherDetail?.weather[0].icon}}@2x.png" width="100px" height="100px"
+            alt="weather">
+        </div>
       </div>
     </div>
     <!-- first row -->
